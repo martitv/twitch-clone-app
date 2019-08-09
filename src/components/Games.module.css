@@ -1,0 +1,35 @@
+.games {
+  padding-top: 102px;
+}
+
+.title {
+  text-align: center;
+}
+
+.games_grid {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  grid-gap: .5rem;
+}
+
+.game_item {
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 10%;
+  overflow: hidden;
+  max-width: 250px;
+}
+
+.game_box_art {
+  max-height: 250px;
+}
+
+.game_name {
+  height: 50px;
+  color: white;
+  background: purple;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

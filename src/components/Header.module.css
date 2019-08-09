@@ -1,0 +1,42 @@
+nav {
+  box-shadow: 0 0 2px 1px black;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+li a:hover {
+  background-color: rgb(175, 0, 175);
+}
+
+li a:active {
+  box-shadow: inset 10px 0px 5px -10px black, inset -10px 0px 5px -10px black;
+  background-color: rgb(175, 0, 175);
+}
+
+.active {
+  background-color: purple;
+}
