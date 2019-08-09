@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../api";
 import styles from "./Streams.module.css";
-import StreamItem from "./StreamItem";
+import { StreamItem } from "./StreamItem";
 
 /*
     game_id: "488552"
