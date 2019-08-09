@@ -53,4 +53,4 @@ function Streams() {
   );
 }
 
-export default Streams;
+export {Streams};

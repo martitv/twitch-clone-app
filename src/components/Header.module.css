@@ -1,4 +1,4 @@
-nav {
+.nav {
   box-shadow: 0 0 2px 1px black;
 }
 .sticky {
@@ -7,7 +7,7 @@ nav {
   width: 100%
 }
 
-ul {
+.ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -15,11 +15,11 @@ ul {
   background-color: #333;
 }
 
-li {
+.li {
   float: left;
 }
 
-li a {
+.li a {
   display: block;
   color: white;
   text-align: center;
@@ -28,11 +28,11 @@ li a {
   transition: background .2s;
 }
 
-li a:hover {
+.li a:hover {
   background-color: rgb(175, 0, 175);
 }
 
-li a:active {
+.li a:active {
   box-shadow: inset 10px 0px 5px -10px black, inset -10px 0px 5px -10px black;
   background-color: rgb(175, 0, 175);
 }

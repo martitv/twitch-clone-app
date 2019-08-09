@@ -1,9 +1,8 @@
-import React, { useState, useLayoutEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useLayoutEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
-function Header() {
-  const [activeTab, setActiveTab] = useState(null);
+function Header(props) {
   const navRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -12,7 +11,6 @@ function Header() {
     let jumpHeight = header.offsetHeight;
 
     let handleScroll = () => {
-      
       if (window.pageYOffset > sticky) {
         document.body.style.paddingTop = `${jumpHeight}px`;
         header.classList.add(styles.sticky);
@@ -26,25 +24,18 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  useLayoutEffect(() => {
-    if (activeTab) {
-      activeTab.classList.add(styles.active);
-    }
-    return () => {
-      if (activeTab) {
-        activeTab.classList.remove(styles.active);
-      }
-    };
-  }, [activeTab]);
-
   return (
-    <nav ref={navRef}>
-      <ul>
-        <li onClick={el => setActiveTab(el.currentTarget)}>
-          <Link to="/">Top Games</Link>
+    <nav className={styles.nav} ref={navRef}>
+      <ul className={styles.ul}>
+        <li className={styles.li}>
+          <NavLink to="/" activeClassName={styles.active} exact>
+            Top Games
+          </NavLink>
         </li>
-        <li onClick={el => setActiveTab(el.currentTarget)}>
-          <Link to="/top-streams">Top Live Streams</Link>
+        <li className={styles.li}>
+          <NavLink to="/top-streams" activeClassName={styles.active} exact>
+            Top Live Streams
+          </NavLink>
         </li>
       </ul>
     </nav>

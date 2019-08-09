@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import api from '../api';
-import styles from './Games.module.css';
+import api from "../api";
+import styles from "./Games.module.css";
+import { Link } from "react-router-dom";
 
 function Games() {
   const [games, setGames] = useState([]);
@@ -28,12 +29,22 @@ function Games() {
       <div className={styles.games_grid}>
         {games.map(({ name, box_art_url, id }) => (
           <div className={styles.game_item} key={id}>
-            <div className={styles.game_box_art}>
-              <img src={box_art_url} alt={name} />
-            </div>
-            <div className={styles.game_name}>
-              <span>{name}</span>
-            </div>
+            <Link
+              className={styles.link}
+              to={{
+                pathname: "game/" + name,
+                state: {
+                  gameId: id
+                }
+              }}
+            >
+              <div className={styles.game_box_art}>
+                <img src={box_art_url} alt={name} />
+              </div>
+              <div className={styles.game_name}>
+                <span>{name}</span>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
