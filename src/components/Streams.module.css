@@ -7,11 +7,3 @@
   grid-template: 1fr / repeat(3, 1fr);
   grid-gap: 1rem;
 }
-
-.stream_item {
-  margin: 0 auto;
-}
-
-.stream_name {
-  text-align: center;
-}

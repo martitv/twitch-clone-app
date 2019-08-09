@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../api";
 import styles from "./Streams.module.css";
+import StreamItem from "./StreamItem";
 
 /*
     game_id: "488552"
@@ -39,16 +40,9 @@ function Streams() {
       <h1 className={styles.title}>Most Popular Streamers</h1>
       <div className={styles.streams_grid}>
         {streams.map(({ thumbnail_url, user_name, id }) => (
-          <div className={styles.stream_item} key={id}>
-            <div className={styles.thumbnail}>
-                <img src={thumbnail_url} alt={user_name}></img>
-            </div>
-            <div className={styles.stream_name}>
-            <span>{user_name}</span>
-            </div>
-          </div>
+          <StreamItem user_name={user_name} thumbnail_url={thumbnail_url} key={id}></StreamItem>
         ))}
-      </div>
+        </div>
     </div>
   );
 }
