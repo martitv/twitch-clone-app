@@ -1,7 +1,12 @@
 .stream_item {
   margin: 0 auto;
+  max-width: 300px;
 }
 
 .stream_name {
   text-align: center;
+}
+
+.thumbnail {
+  max-height: 200px;
 }

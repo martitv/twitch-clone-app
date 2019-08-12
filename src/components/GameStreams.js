@@ -33,6 +33,7 @@ function GameStreams({ match, location }) {
   return (
     <div>
       <h1 className={styles.title}>Most Popular Streamers</h1>
+      <h2 className={styles.title}>There are currently <u style={{color: 'purple'}}>{viewers}</u> viwers watching <u style={{color: 'purple'}}>{match.params.id}</u></h2>
       <div className={styles.streams_grid}>
         {streams.map(({ thumbnail_url, user_name, id }) => (
           <StreamItem user_name={user_name} thumbnail_url={thumbnail_url} key={id}></StreamItem>
