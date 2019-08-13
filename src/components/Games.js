@@ -1,32 +1,21 @@
-import React, { useState, useEffect } from "react";
-import api from "../api";
+import React from "react";
 import styles from "./Games.module.css";
 import { Link } from "react-router-dom";
+import useFetchTwitchData from "../hooks/useFetchTwitchData";
+import GridLayout from "./GridLayout";
+import Title from "./Title";
 
 function Games() {
-  const [games, setGames] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await api.get("https://api.twitch.tv/helix/games/top");
-      let data = result.data.data;
-      let finalData = data.map(game => {
-        return {
-          ...game,
-          box_art_url: game.box_art_url
-            .replace("{width}", "250")
-            .replace("{height}", "250")
-        };
-      });
-      setGames(finalData);
-    };
-    fetchData();
-  }, []);
+  const games = useFetchTwitchData("games/top", {
+    imageKey: "box_art_url",
+    width: 250,
+    height: 250
+  });
 
   return (
     <div>
-      <h1 className={styles.title}>Most Popular Games</h1>
-      <div className={styles.games_grid}>
+      <Title className={styles.title}>Most Popular Games</Title>
+      <GridLayout>
         {games.map(({ name, box_art_url, id }) => (
           <div className={styles.game_item} key={id}>
             <Link
@@ -47,7 +36,7 @@ function Games() {
             </Link>
           </div>
         ))}
-      </div>
+      </GridLayout>
     </div>
   );
 }

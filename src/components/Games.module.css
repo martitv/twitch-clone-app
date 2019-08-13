@@ -1,13 +1,3 @@
-.title {
-  text-align: center;
-}
-
-.games_grid {
-  display: grid;
-  grid-template: 1fr / repeat(3, 1fr);
-  grid-gap: .5rem;
-}
-
 .game_item {
   margin: 0 auto;
   box-shadow: 2px 2px 2px grey;
