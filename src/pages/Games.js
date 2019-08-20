@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./Games.module.css";
 import { Link } from "react-router-dom";
 import useFetchTwitchData from "../hooks/useFetchTwitchData";
-import GridLayout from "./GridLayout";
-import Title from "./Title";
+import GridLayout from "../components/GridLayout";
+import Title from "../components/Title";
 
 function Games() {
   const games = useFetchTwitchData("games/top", {

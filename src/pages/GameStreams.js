@@ -1,8 +1,8 @@
 import React from "react";
-import { StreamItem } from "./StreamItem";
+import { StreamItem } from "../components/StreamItem";
 import useFetchTwitchData from "../hooks/useFetchTwitchData";
-import GridLayout from "./GridLayout";
-import Title from "./Title";
+import GridLayout from "../components/GridLayout";
+import Title from "../components/Title";
 
 function GameStreams({ match, location }) {
   const streams = useFetchTwitchData(

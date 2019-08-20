@@ -1,8 +1,8 @@
 import React from "react";
-import { StreamItem } from "./StreamItem";
+import { StreamItem } from "../components/StreamItem";
 import useFetchTwitchData from "../hooks/useFetchTwitchData";
-import GridLayout from "./GridLayout";
-import Title from "./Title";
+import GridLayout from "../components/GridLayout";
+import Title from "../components/Title";
 
 function Streams() {
   const streams = useFetchTwitchData("streams/", {
@@ -10,7 +10,6 @@ function Streams() {
     width: 300,
     height: 200
   });
-
   return (
     <div>
       <Title>Most Popular Streamers</Title>
